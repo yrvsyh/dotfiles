@@ -1,4 +1,4 @@
-source ~/.git.plugin.zsh
+source ~/dotfiles/git.plugin.zsh
 alias c="clear"
 alias pac="sudo pacman"
 export TERM="xterm-256color"
