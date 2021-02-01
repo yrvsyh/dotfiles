@@ -68,6 +68,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'joshdick/onedark.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'plasticboy/vim-markdown'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
@@ -142,7 +143,8 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 "==========nerdcommenter==========
 "==========coc.nvim==========
-autocmd BufWritePre * :Format
+"autocmd BufWritePre * :Format
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -226,6 +228,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
+nmap <leader>F  :Format<CR>
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
