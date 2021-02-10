@@ -45,12 +45,12 @@ nmap <C-h> 5h
 nmap <C-j> 5j
 nmap <C-k> 5k
 nmap <C-l> 5l
+nmap <C-n> :bn<CR>
+nmap <C-p> :bp<CR>
 nmap <leader>t :!ctags -R --c++-kinds=+px --c-kinds=+px --fields=+iaS --extras=+q .<CR><CR>
 nmap <leader>T :set tags+=~/ctags/
 nmap tg :!ctags -R .<CR><CR>
 nnoremap <leader>d :bd<CR>
-nnoremap <leader>n :bn<CR>
-nnoremap <leader>p :bp<CR>
 tnoremap <Esc> <C-\><C-n>
 "==========map==========
 "==========command==========
@@ -62,20 +62,25 @@ source ~/ctags/ctags.vim
 
 "==========plug==========
 call plug#begin('~/vim-plug')
+"Plug 'ap/vim-buftabline'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'bkad/CamelCaseMotion'
 Plug 'easymotion/vim-easymotion'
 Plug 'joshdick/onedark.vim'
+Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'plasticboy/vim-markdown'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
+Plug 'preservim/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 colorscheme onedark
+
+nmap <C-g> :Files<CR>
 
 let g:camelcasemotion_key = '<leader>'
 "map <silent> w <Plug>CamelCaseMotion_w
@@ -90,9 +95,12 @@ let g:camelcasemotion_key = '<leader>'
 nmap <Leader>l <Plug>(easymotion-bd-jk)
 
 nmap <F9> :NERDTreeToggle<CR>
-let g:NERDTreeWinSize=34
+let g:NERDTreeWinSize=28
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
+
+nmap <F10> :TagbarToggle<CR>
+let g:tagbar_width=50
 
 nmap <F12> :FloatermToggle<CR>
 imap <F12> :FloatermToggle<CR>
@@ -103,6 +111,18 @@ tmap <F12> <ESC>:FloatermToggle<CR>
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#buffer_idx_format = {
+       \ '0': '0 ',
+       \ '1': '1 ',
+       \ '2': '2 ',
+       \ '3': '3 ',
+       \ '4': '4 ',
+       \ '5': '5 ',
+       \ '6': '6 ',
+       \ '7': '7 ',
+       \ '8': '8 ',
+       \ '9': '9 '
+       \}
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
