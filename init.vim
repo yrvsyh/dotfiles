@@ -13,7 +13,7 @@ set autowrite
 set backspace=2
 set cindent
 set clipboard+=unnamed
-set colorcolumn=80
+set colorcolumn=80,120
 set cursorline
 set expandtab
 set mouse=a
@@ -48,8 +48,9 @@ nmap <C-l> 5l
 nmap <C-n> :bn<CR>
 nmap <C-p> :bp<CR>
 nmap <leader>t :!ctags -R --c++-kinds=+px --c-kinds=+px --fields=+iaS --extras=+q .<CR><CR>
+" nmap <leader>t :!ctags -R --c++-kinds=+px --c-kinds=+px --fields=+iaS --extras=+r .<CR><CR>
 nmap <leader>T :set tags+=~/ctags/
-nmap tg :!ctags -R .<CR><CR>
+nmap <silent> <leader>F :%py3f /usr/share/clang/clang-format.py<CR>
 nnoremap <leader>d :bd<CR>
 tnoremap <Esc> <C-\><C-n>
 "==========map==========
@@ -81,6 +82,7 @@ call plug#end()
 colorscheme onedark
 
 nmap <C-g> :Files<CR>
+nmap g] :Tags <C-r><C-w><CR>
 
 let g:camelcasemotion_key = '<leader>'
 "map <silent> w <Plug>CamelCaseMotion_w
@@ -100,7 +102,7 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 
 nmap <F10> :TagbarToggle<CR>
-let g:tagbar_width=50
+let g:tagbar_width=45
 
 nmap <F12> :FloatermToggle<CR>
 imap <F12> :FloatermToggle<CR>
@@ -248,9 +250,9 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-nmap <leader>F  :Format<CR>
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>f <Plug>(coc-format-selected)
+nmap <leader>f <Plug>(coc-format-selected)
+nmap <leader><leader>f :Format<CR>
 
 augroup mygroup
   autocmd!
