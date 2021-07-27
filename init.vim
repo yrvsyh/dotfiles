@@ -77,6 +77,8 @@ Plug 'preservim/nerdtree'
 Plug 'preservim/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'voldikss/vim-floaterm'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 colorscheme onedark
