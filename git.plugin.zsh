@@ -28,6 +28,7 @@ alias gbss='git bisect start'
 
 alias gc='git commit -v'
 alias gc!='git commit -v --amend'
+alias gcn='git commit --allow-empty'
 alias gcn!='git commit -v --no-edit --amend'
 alias gca='git commit -v -a'
 alias gca!='git commit -v -a --amend'
