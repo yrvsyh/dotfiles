@@ -1,0 +1,12 @@
+gui:
+  showFileTree: true # for rendering changes files in a tree format
+  sidePanelWidth: 0.3 # number from 0 to 1
+quitOnTopLevelReturn: true
+keybinding:
+  universal:
+    quit: 'q'
+    quit-alt1: '<esc>' # alternative/alias of quit
+    return: '<c-c>' # return to previous menu, will quit if there's nowhere to return
+git:
+  branchLogCmd: "git log --graph --color=always --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\ {{branchName}} --"
+  allBranchesLogCmd: "git log --graph --color=always --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --all"
