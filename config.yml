@@ -4,9 +4,10 @@ gui:
 quitOnTopLevelReturn: true
 keybinding:
   universal:
-    quit: 'q'
+    quit: '<esc>'
     quit-alt1: '<esc>' # alternative/alias of quit
     return: '<c-c>' # return to previous menu, will quit if there's nowhere to return
+    return-alt: 'q' # # alternative/alias of return
 git:
   branchLogCmd: "git log --graph --color=always --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\ {{branchName}} --"
   allBranchesLogCmd: "git log --graph --color=always --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --all"
